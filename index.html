@@ -644,7 +644,11 @@
 
           <div class="card">
             <h3>Booking Inquiry Form</h3>
-            <form class="inquiry-form" action="mailto:turningdowntodayband@gmail.com" method="post" enctype="text/plain">
+            <form class="inquiry-form" action="https://formsubmit.co/turningdowntodayband@gmail.com" method="post">
+              <input type="hidden" name="_subject" value="New Turning Down Today Booking Inquiry" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
               <label for="name">Name</label>
               <input id="name" name="Name" type="text" required />
 
@@ -656,7 +660,7 @@
 
               <button class="button" type="submit">Send Inquiry</button>
             </form>
-            <p class="muted form-note">This opens your email app with your inquiry details addressed to the band booking email.</p>
+            <p class="muted form-note">Submissions are sent directly to the band inbox.</p>
           </div>
 
           <div class="card">
@@ -683,6 +687,7 @@
   </script>
 </body>
 </html>
+
 
 
 
