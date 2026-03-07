@@ -297,12 +297,49 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .contact-grid {
+    }    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.25rem;
+    }
+
+    .inquiry-form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .inquiry-form label {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .inquiry-form input,
+    .inquiry-form textarea {
+      width: 100%;
+      background: rgba(2, 6, 23, 0.75);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      font: inherit;
+    }
+
+    .inquiry-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .inquiry-form .button {
+      border: 0;
+      cursor: pointer;
+      width: fit-content;
+      margin-top: 0.25rem;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
     }
 
     .footer {
@@ -596,25 +633,42 @@
           </div>
         </div>
 
-        <div class="contact-grid">
+                <div class="contact-grid">
           <div class="card">
             <h3>Booking Contact</h3>
             <p><strong>Rusty Planert</strong><br />Turning Down Today</p>
             <p>
-              Email: <a href="mailto:rustyplanert@gmail.com">rustyplanert@gmail.com</a><br />
+              Email: <a href="mailto:turningdowntodayband@gmail.com">turningdowntodayband@gmail.com</a><br />
               Phone: <a href="tel:+12244062078">(224) 406-2078</a>
             </p>
             <p class="muted">Based in the Chicago area and available for festivals, community events, bars, and private bookings.</p>
           </div>
 
           <div class="card">
+            <h3>Booking Inquiry Form</h3>
+            <form class="inquiry-form" action="mailto:turningdowntodayband@gmail.com" method="post" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" required />
+
+              <label for="event">Event Details</label>
+              <textarea id="event" name="Event Details" placeholder="Date, location, event type, and timing" required></textarea>
+
+              <button class="button" type="submit">Send Inquiry</button>
+            </form>
+            <p class="muted form-note">This opens your email app with your inquiry details addressed to the band booking email.</p>
+          </div>
+
+          <div class="card">
             <h3>Links</h3>
             <p>
-              <a href="https://www.youtube.com/@TurningDownToday" target="_blank" rel="noreferrer">YouTube</a><br />
+              <a href="https://www.youtube.com/@TurningDownTodayBand" target="_blank" rel="noreferrer">YouTube</a><br />
               <a href="https://www.instagram.com/jonnyuntch/" target="_blank" rel="noreferrer">Instagram</a><br />
               <a href="https://www.facebook.com/jonny.untch" target="_blank" rel="noreferrer">Facebook</a>
             </p>
-            <p class="muted">Next additions could include a dedicated YouTube channel, an EPK download, testimonials, and stronger live photography from summer events.</p>
+            <p class="muted">Watch clips, follow updates, and reach out about upcoming festival and community event dates.</p>
           </div>
         </div>
       </div>
@@ -632,6 +686,7 @@
   </script>
 </body>
 </html>
+
 
 
 
