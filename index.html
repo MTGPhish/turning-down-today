@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Turning Down Today | Chicago Rock Cover Band</title>
   <meta name="description" content="Turning Down Today is a high-energy Chicago-area rock cover band performing classic rock, hard rock, and alternative favorites for festivals, summer concert series, and community events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0f172a;
@@ -15,21 +18,23 @@
       --accent: #f59e0b;
       --accent-dark: #d97706;
       --border: rgba(255,255,255,0.08);
-      --max: 1100px;
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Source Sans 3", "Trebuchet MS", Arial, sans-serif;
       background: linear-gradient(180deg, var(--bg) 0%, #020617 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
     }
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
+    p { margin: 0 0 1rem; }
 
     .container {
       width: min(100% - 2rem, var(--max));
@@ -54,34 +59,38 @@
     }
 
     .brand {
+      font-family: "Oswald", Impact, "Arial Narrow Bold", sans-serif;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-size: 1.1rem;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.15rem;
       font-size: 0.95rem;
       color: var(--muted);
+      font-weight: 600;
     }
 
     .nav-links a:hover,
     .nav-links a:focus { color: var(--text); }
 
     .hero {
-      padding: 5rem 0 4rem;
+      padding: 5.5rem 0 4.8rem;
       border-bottom: 1px solid var(--border);
       background:
         radial-gradient(circle at top right, rgba(245, 158, 11, 0.18), transparent 28%),
-        radial-gradient(circle at left center, rgba(245, 158, 11, 0.12), transparent 24%);
+        radial-gradient(circle at left center, rgba(245, 158, 11, 0.12), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0) 40%);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -96,19 +105,24 @@
     }
 
     h1, h2, h3 {
+      font-family: "Oswald", Impact, "Arial Narrow Bold", sans-serif;
       line-height: 1.15;
       margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      font-size: clamp(2.4rem, 5vw, 4.9rem);
       margin-bottom: 1rem;
     }
 
     h2 {
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
       margin-bottom: 1rem;
     }
+
+    h3 { font-size: clamp(1.15rem, 2.2vw, 1.4rem); }
 
     .hero p,
     .section-intro,
@@ -117,7 +131,7 @@
     }
 
     .hero-copy {
-      font-size: 1.08rem;
+      font-size: 1.14rem;
       max-width: 42rem;
     }
 
@@ -125,7 +139,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.9rem;
     }
 
     .button {
@@ -133,7 +147,7 @@
       background: var(--accent);
       color: #111827;
       font-weight: 700;
-      padding: 0.9rem 1.25rem;
+      padding: 0.92rem 1.35rem;
       border-radius: 999px;
       transition: 0.2s ease;
     }
@@ -151,8 +165,8 @@
     .card {
       background: rgba(31, 41, 55, 0.75);
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.25rem;
+      border-radius: 20px;
+      padding: 1.4rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
@@ -169,7 +183,7 @@
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 0.9rem;
+      padding: 1rem;
     }
 
     .stat strong {
@@ -180,7 +194,7 @@
     }
 
     section {
-      padding: 4rem 0;
+      padding: 5rem 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -192,10 +206,13 @@
       margin-bottom: 1.5rem;
     }
 
+    .section-intro { max-width: 50rem; }
+
     .video-grid,
     .three-grid,
     .song-grid,
-    .gallery-grid {
+    .gallery-grid,
+    .organizer-grid {
       display: grid;
       gap: 1.25rem;
     }
@@ -204,6 +221,12 @@
     .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     .three-grid { grid-template-columns: repeat(3, 1fr); }
     .song-grid { grid-template-columns: repeat(2, 1fr); }
+    .organizer-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .organizer-card {
+      border-left: 3px solid rgba(245, 158, 11, 0.55);
+      padding-left: 1.05rem;
+    }
 
     .video-card iframe {
       width: 100%;
@@ -261,6 +284,21 @@
       padding: 1rem;
     }
 
+    .photo-frame {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0b1120;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -279,7 +317,8 @@
       .three-grid,
       .gallery-grid,
       .song-grid,
-      .contact-grid {
+      .contact-grid,
+      .organizer-grid {
         grid-template-columns: 1fr;
       }
 
@@ -301,6 +340,7 @@
       <div class="brand">Turning Down Today</div>
       <div class="nav-links">
         <a href="#videos">Videos</a>
+        <a href="#why-book-us">Why Us</a>
         <a href="#about">About</a>
         <a href="#songs">Songs</a>
         <a href="#shows">Shows</a>
@@ -314,9 +354,9 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Chicago Area Rock Cover Band</div>
-        <h1>High-energy rock covers for festivals, summer concert series, and community events.</h1>
+        <h1>Big rock songs for family-friendly festivals, summer concerts, and community nights.</h1>
         <p class="hero-copy">
-          Turning Down Today delivers crowd-pleasing classic rock, hard rock, and alternative favorites for park districts, village concerts, festivals, and community events across the Chicago suburbs. We show up prepared, keep things easy for organizers, and bring the kind of energy that helps create a fun, engaging night for the crowd.
+          Turning Down Today brings classic rock, hard rock, and alternative favorites to park districts, village concerts, festivals, and community events across the Chicago suburbs. We keep planning simple for organizers, show up ready to go, and focus on songs people of all ages recognize and enjoy together.
         </p>
         <div class="cta-row">
           <a class="button" href="#contact">Book the Band</a>
@@ -327,14 +367,14 @@
 
       <aside class="hero-card">
         <h3>Why book Turning Down Today?</h3>
-        <p class="muted">A professional, easy-to-work-with live act built for outdoor community shows, festival sets, and rooms that want recognizable rock songs people actually sing along to.</p>
+        <p class="muted">Friendly to work with, easy for organizers, and built for outdoor community shows where crowds want to sing along and have fun.</p>
         <div class="stats">
           <div class="stat">
             <strong>130+</strong>
             songs in rotation
           </div>
           <div class="stat">
-            <strong>45–180</strong>
+            <strong>45-180</strong>
             minute set flexibility
           </div>
           <div class="stat">
@@ -382,12 +422,45 @@
       </div>
     </section>
 
+    <section id="why-book-us">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Why Event Organizers Book Us</h2>
+            <p class="section-intro">A great fit for suburban Chicago festivals, summer concert series, and community events that want a dependable band with a fun, welcoming vibe.</p>
+          </div>
+        </div>
+
+        <div class="organizer-grid">
+          <article class="card organizer-card">
+            <h3>Professional and Reliable</h3>
+            <p>Clear communication, on-time arrival, and a prepared setup so your event runs smoothly.</p>
+          </article>
+
+          <article class="card organizer-card">
+            <h3>Flexible Set Lengths</h3>
+            <p>From a tight 45-minute featured set to multiple sets up to 3 hours, we match your schedule and format.</p>
+          </article>
+
+          <article class="card organizer-card">
+            <h3>Crowd-Friendly Rock Songs</h3>
+            <p>Recognizable songs from multiple eras that keep families, neighbors, and friends engaged.</p>
+          </article>
+
+          <article class="card organizer-card">
+            <h3>Festival and Community Event Fit</h3>
+            <p>Strong fit for park districts, village concerts, summer festivals, and all-ages outdoor events.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>About the Band</h2>
-            <p class="section-intro">Short, direct, professional, and easy for event organizers to forward internally.</p>
+            <p class="section-intro">A local band that brings strong musicianship, a positive vibe, and a crowd-first setlist.</p>
           </div>
         </div>
 
@@ -397,10 +470,10 @@
               Turning Down Today is a high-energy Chicago-area rock cover band performing classic rock, hard rock, and alternative favorites that audiences know and love.
             </p>
             <p>
-              The band has been playing around the suburbs since high school and brings years of live experience, dependable preparation, and a no-hassle approach that makes things easier for event organizers. Led by vocalist <strong>Jonny Untch</strong>, Turning Down Today delivers tight musicianship, strong vocals, and a setlist packed with recognizable songs from artists like <strong>Led Zeppelin, AC/DC, Aerosmith, Van Halen, Tom Petty, Foo Fighters, Pearl Jam, The Killers, Alice in Chains,</strong> and <strong>Stone Temple Pilots</strong>.
+              The band has been playing around the suburbs since high school and brings years of live experience with an easygoing, no-drama approach that event organizers appreciate. Led by vocalist <strong>Jonny Untch</strong>, Turning Down Today delivers tight musicianship, strong vocals, and a setlist packed with recognizable songs from artists like <strong>Led Zeppelin, AC/DC, Aerosmith, Van Halen, Tom Petty, Foo Fighters, Pearl Jam, The Killers, Alice in Chains,</strong> and <strong>Stone Temple Pilots</strong>.
             </p>
             <p>
-              With a repertoire of more than <strong>130 songs</strong> and flexible set lengths ranging from <strong>45 minutes to 3 hours</strong>, Turning Down Today is a strong fit for festivals, summer concert series, village greens, bars, and community events looking for a professional band that shows up, delivers, and keeps the crowd engaged.
+              With a repertoire of more than <strong>130 songs</strong> and flexible set lengths ranging from <strong>45 minutes to 3 hours</strong>, Turning Down Today is a strong fit for festivals, summer concert series, village greens, bars, and community events that want reliable entertainment and a crowd that stays connected to the show.
             </p>
           </div>
 
@@ -411,47 +484,50 @@
               <span class="tag">Community Festivals</span>
               <span class="tag">Park District Events</span>
               <span class="tag">Suburban Festivals</span>
-              <span class="tag">Bars & Venues</span>
+              <span class="tag">Bars &amp; Venues</span>
               <span class="tag">Corporate Events</span>
               <span class="tag">Private Parties</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="songs">
+    </section>    <section id="songs">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Sample Song List</h2>
-            <p class="section-intro">A quick snapshot of the kind of set people can expect.</p>
+            <h2>Sample Repertoire</h2>
+            <p class="section-intro">A highlight reel of crowd favorites. We keep the full library available in our live song sheet.</p>
           </div>
         </div>
 
         <div class="song-grid">
           <div class="card">
-            <h3>Classic Rock / Hard Rock</h3>
+            <h3>Sample Songs</h3>
             <ul class="list">
-              <li>Whole Lotta Love</li>
-              <li>Sweet Child O’ Mine</li>
-              <li>Crazy Train / Paranoid Medley</li>
-              <li>Dream On</li>
+              <li>Sweet Child O' Mine</li>
+              <li>Ozzy Osbourne (Medley)</li>
+              <li>Led Zeppelin (Medley)</li>
               <li>You Shook Me All Night Long</li>
-              <li>Runnin’ Down a Dream</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Alternative / Modern Rock</h3>
-            <ul class="list">
+              <li>Sultans of Swing</li>
+              <li>The Middle</li>
+              <li>American Girl</li>
+              <li>Panama</li>
               <li>Everlong</li>
               <li>Mr. Brightside</li>
               <li>Alive</li>
               <li>Interstate Love Song</li>
               <li>Cochise</li>
-              <li>Would?</li>
+              <li>Man in the Box</li>
             </ul>
+          </div>
+
+          <div class="card">
+            <h3>Featured Artists</h3>
+            <p class="muted">Led Zeppelin, AC/DC, Aerosmith, Van Halen, Tom Petty, Foo Fighters, Pearl Jam, The Killers, Alice in Chains, and Stone Temple Pilots.</p>
+            <p class="muted">Plus many more across classic rock, hard rock, and alternative eras.</p>
+            <p style="margin-top: 1.1rem;">
+              <a class="button secondary" href="https://docs.google.com/spreadsheets/d/1J-YTJoqOtuXfZOXqnGm0lM6N401baZ4E/edit?gid=895387729#gid=895387729" target="_blank" rel="noreferrer">View Full Song List (137 Songs)</a>
+            </p>
           </div>
         </div>
       </div>
@@ -470,7 +546,7 @@
           <div class="show-item">
             <div>
               <h3 style="margin-bottom: 0.35rem;">Fridays on the Green</h3>
-              <div class="muted">Village of Mount Prospect • Mount Prospect, Illinois</div>
+              <div class="muted">Village of Mount Prospect - Mount Prospect, Illinois</div>
             </div>
             <div><strong>June 26, 2026</strong></div>
           </div>
@@ -499,12 +575,14 @@
         <div class="section-head">
           <div>
             <h2>Photos</h2>
-            <p class="section-intro">Swap these placeholders with real live-band shots when you are ready.</p>
+            <p class="section-intro">A quick look at the band and the kind of energy we bring to local events.</p>
           </div>
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-item">Add a strong live stage photo here</div>
+          <figure class="photo-frame">
+            <img src="band-photo.jpg" alt="Turning Down Today band photo in front of stage" />
+          </figure>
           <div class="gallery-item">Add a full-band or promo photo here</div>
           <div class="gallery-item">Add a crowd or event-energy photo here</div>
         </div>
@@ -547,7 +625,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Turning Down Today. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Turning Down Today. All rights reserved.</p>
     </div>
   </footer>
 
@@ -556,3 +634,9 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
