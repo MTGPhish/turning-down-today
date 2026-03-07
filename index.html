@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turning Down Today | Chicago Rock Cover Band</title>
+  <meta name="description" content="Turning Down Today is a high-energy Chicago-area rock cover band performing classic rock, hard rock, and alternative favorites for festivals, summer concert series, and community events." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --border: rgba(255,255,255,0.08);
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus { color: var(--text); }
+
+    .hero {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.18), transparent 28%),
+        radial-gradient(circle at left center, rgba(245, 158, 11, 0.12), transparent 24%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p,
+    .section-intro,
+    .muted {
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      font-size: 1.08rem;
+      max-width: 42rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 700;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus { background: #fbbf24; transform: translateY(-1px); }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero-card,
+    .card {
+      background: rgba(31, 41, 55, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 { margin-bottom: 0.75rem; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 0.9rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-grid,
+    .three-grid,
+    .song-grid,
+    .gallery-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .video-grid,
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .three-grid { grid-template-columns: repeat(3, 1fr); }
+    .song-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 14px;
+      margin-bottom: 0.8rem;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .list li:last-child { border-bottom: 0; }
+
+    .show-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .show-item:last-child { border-bottom: 0; }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fcd34d;
+      background: rgba(245, 158, 11, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-right: 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      padding: 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .video-grid,
+      .three-grid,
+      .gallery-grid,
+      .song-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .show-item,
+      .nav-inner {
+        align-items: start;
+      }
+
+      .show-item { flex-direction: column; }
+      .nav-inner { flex-direction: column; }
+      .hero { padding-top: 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Turning Down Today</div>
+      <div class="nav-links">
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+        <a href="#songs">Songs</a>
+        <a href="#shows">Shows</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Book Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Chicago Area Rock Cover Band</div>
+        <h1>High-energy rock covers for festivals, summer concert series, and community events.</h1>
+        <p class="hero-copy">
+          Turning Down Today delivers crowd-pleasing classic rock, hard rock, and alternative favorites for park districts, village concerts, festivals, and community events across the Chicago suburbs. We show up prepared, keep things easy for organizers, and bring the kind of energy that helps create a fun, engaging night for the crowd.
+        </p>
+        <div class="cta-row">
+          <a class="button" href="#contact">Book the Band</a>
+          <a class="button secondary" href="#videos">Watch Live Videos</a>
+        </div>
+        <p class="muted" style="margin-top: 1rem;">Now booking summer and fall 2026 dates across the Chicago suburbs.</p>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Why book Turning Down Today?</h3>
+        <p class="muted">A professional, easy-to-work-with live act built for outdoor community shows, festival sets, and rooms that want recognizable rock songs people actually sing along to.</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>130+</strong>
+            songs in rotation
+          </div>
+          <div class="stat">
+            <strong>45–180</strong>
+            minute set flexibility
+          </div>
+          <div class="stat">
+            <strong>Since 2006</strong>
+            suburban Chicago live shows
+          </div>
+          <div class="stat">
+            <strong>All ages</strong>
+            community-friendly fit
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="videos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Live Performance Videos</h2>
+            <p class="section-intro">Lead with proof. These are usually the first thing bookers want to see.</p>
+          </div>
+        </div>
+
+        <div class="video-grid">
+          <article class="card video-card">
+            <iframe src="https://www.youtube.com/embed/1BZPsxzp5cE" title="Turning Down Today video 1" allowfullscreen></iframe>
+            <h3>Featured Performance</h3>
+            <p class="muted">Replace this caption with the song title, venue, and anything that helps tell the story.</p>
+          </article>
+
+          <article class="card video-card">
+            <iframe src="https://www.youtube.com/embed/Swez1F4LYwg" title="Turning Down Today video 2" allowfullscreen></iframe>
+            <h3>Live Crowd Energy</h3>
+            <p class="muted">Good place for a clip that shows audience response and sing-along appeal.</p>
+          </article>
+
+          <article class="card video-card">
+            <iframe src="https://www.youtube.com/embed/2-j7cOOlHVQ" title="Turning Down Today video 3" allowfullscreen></iframe>
+            <h3>Festival / Event Fit</h3>
+            <p class="muted">Use a clip that feels most relevant to park districts, concert series, or summer events.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>About the Band</h2>
+            <p class="section-intro">Short, direct, professional, and easy for event organizers to forward internally.</p>
+          </div>
+        </div>
+
+        <div class="three-grid">
+          <div class="card" style="grid-column: span 2;">
+            <p>
+              Turning Down Today is a high-energy Chicago-area rock cover band performing classic rock, hard rock, and alternative favorites that audiences know and love.
+            </p>
+            <p>
+              The band has been playing around the suburbs since high school and brings years of live experience, dependable preparation, and a no-hassle approach that makes things easier for event organizers. Led by vocalist <strong>Jonny Untch</strong>, Turning Down Today delivers tight musicianship, strong vocals, and a setlist packed with recognizable songs from artists like <strong>Led Zeppelin, AC/DC, Aerosmith, Van Halen, Tom Petty, Foo Fighters, Pearl Jam, The Killers, Alice in Chains,</strong> and <strong>Stone Temple Pilots</strong>.
+            </p>
+            <p>
+              With a repertoire of more than <strong>130 songs</strong> and flexible set lengths ranging from <strong>45 minutes to 3 hours</strong>, Turning Down Today is a strong fit for festivals, summer concert series, village greens, bars, and community events looking for a professional band that shows up, delivers, and keeps the crowd engaged.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Why organizers book bands like this</h3>
+            <div>
+              <span class="tag">Summer Concert Series</span>
+              <span class="tag">Community Festivals</span>
+              <span class="tag">Park District Events</span>
+              <span class="tag">Suburban Festivals</span>
+              <span class="tag">Bars & Venues</span>
+              <span class="tag">Corporate Events</span>
+              <span class="tag">Private Parties</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="songs">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Sample Song List</h2>
+            <p class="section-intro">A quick snapshot of the kind of set people can expect.</p>
+          </div>
+        </div>
+
+        <div class="song-grid">
+          <div class="card">
+            <h3>Classic Rock / Hard Rock</h3>
+            <ul class="list">
+              <li>Whole Lotta Love</li>
+              <li>Sweet Child O’ Mine</li>
+              <li>Crazy Train / Paranoid Medley</li>
+              <li>Dream On</li>
+              <li>You Shook Me All Night Long</li>
+              <li>Runnin’ Down a Dream</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Alternative / Modern Rock</h3>
+            <ul class="list">
+              <li>Everlong</li>
+              <li>Mr. Brightside</li>
+              <li>Alive</li>
+              <li>Interstate Love Song</li>
+              <li>Cochise</li>
+              <li>Would?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shows">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Upcoming / Recent Shows</h2>
+            <p class="section-intro">We can build this out over time as more summer and municipal shows stack up.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="show-item">
+            <div>
+              <h3 style="margin-bottom: 0.35rem;">Fridays on the Green</h3>
+              <div class="muted">Village of Mount Prospect • Mount Prospect, Illinois</div>
+            </div>
+            <div><strong>June 26, 2026</strong></div>
+          </div>
+
+          <div class="show-item">
+            <div>
+              <h3 style="margin-bottom: 0.35rem;">Chicago Suburban Live Shows Since 2006</h3>
+              <div class="muted">A long-running local band with deep roots in the suburban scene</div>
+            </div>
+            <div><strong>Ongoing</strong></div>
+          </div>
+
+          <div class="show-item">
+            <div>
+              <h3 style="margin-bottom: 0.35rem;">Your Summer Event Here</h3>
+              <div class="muted">Festival, concert series, community event, or venue booking</div>
+            </div>
+            <div><strong>Now Booking</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Photos</h2>
+            <p class="section-intro">Swap these placeholders with real live-band shots when you are ready.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">Add a strong live stage photo here</div>
+          <div class="gallery-item">Add a full-band or promo photo here</div>
+          <div class="gallery-item">Add a crowd or event-energy photo here</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Book Turning Down Today</h2>
+            <p class="section-intro">Make it very easy for event organizers to contact you.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Booking Contact</h3>
+            <p><strong>Rusty Planert</strong><br />Turning Down Today</p>
+            <p>
+              Email: <a href="mailto:rustyplanert@gmail.com">rustyplanert@gmail.com</a><br />
+              Phone: <a href="tel:+12244062078">(224) 406-2078</a>
+            </p>
+            <p class="muted">Based in the Chicago area and available for festivals, community events, bars, and private bookings.</p>
+          </div>
+
+          <div class="card">
+            <h3>Links</h3>
+            <p>
+              <a href="https://www.youtube.com/@TurningDownToday" target="_blank" rel="noreferrer">YouTube</a><br />
+              <a href="https://www.instagram.com/jonnyuntch/" target="_blank" rel="noreferrer">Instagram</a><br />
+              <a href="https://www.facebook.com/jonny.untch" target="_blank" rel="noreferrer">Facebook</a>
+            </p>
+            <p class="muted">Next additions could include a dedicated YouTube channel, an EPK download, testimonials, and stronger live photography from summer events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Turning Down Today. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
