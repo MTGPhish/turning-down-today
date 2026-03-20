@@ -260,6 +260,24 @@
 
     .show-item:last-child { border-bottom: 0; }
 
+    .show-location {
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .show-time {
+      display: inline-block;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fcd34d;
+      background: rgba(245, 158, 11, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
     .tag {
       display: inline-block;
       border: 1px solid rgba(245, 158, 11, 0.35);
@@ -582,9 +600,19 @@
           <div class="show-item">
             <div>
               <h3 style="margin-bottom: 0.35rem;">Fridays on the Green</h3>
-              <div class="muted">Village of Mount Prospect - Mount Prospect, Illinois</div>
+              <div class="show-location">Centennial Green outside Village Hall, 50 S. Emerson Street, Mount Prospect, Illinois</div>
+              <div class="show-time">6-8 PM</div>
             </div>
             <div><strong>June 26, 2026</strong></div>
+          </div>
+
+          <div class="show-item">
+            <div>
+              <h3 style="margin-bottom: 0.35rem;">Buffalo Grove Days</h3>
+              <div class="show-location">Mike Rylko Community Park, 951 McHenry Road, Buffalo Grove, Illinois</div>
+              <div class="show-time">12-3 PM</div>
+            </div>
+            <div><strong>September 7, 2026</strong></div>
           </div>
 
           <div class="show-item">
@@ -595,13 +623,6 @@
             <div><strong>Ongoing</strong></div>
           </div>
 
-          <div class="show-item">
-            <div>
-              <h3 style="margin-bottom: 0.35rem;">Your Summer Event Here</h3>
-              <div class="muted">Festival, concert series, community event, or venue booking</div>
-            </div>
-            <div><strong>Now Booking</strong></div>
-          </div>
         </div>
       </div>
     </section>
