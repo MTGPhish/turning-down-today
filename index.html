@@ -365,6 +365,11 @@
       height: 420px;
     }
 
+    .photo-card.portrait-focus img {
+      object-fit: cover;
+      object-position: center 22%;
+    }
+
     .photo-card figcaption {
       padding: 0.85rem 1rem;
       color: var(--muted);
@@ -726,7 +731,7 @@
             <figcaption>Live guitar work from the Mount Prospect set.</figcaption>
           </figure>
 
-          <figure class="photo-card">
+          <figure class="photo-card portrait-focus">
             <img src="assets/photos/mount-prospect-richie-guitar.jpg" alt="Richie playing guitar during Turning Down Today's Mount Prospect show" loading="lazy" />
             <figcaption>Richie on guitar at Centennial Green.</figcaption>
           </figure>
