@@ -292,6 +292,16 @@
       text-transform: uppercase;
     }
 
+    .show-status {
+      display: block;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+
     .tag {
       display: inline-block;
       border: 1px solid rgba(245, 158, 11, 0.35);
@@ -648,20 +658,22 @@
         <div class="card">
           <div class="show-item">
             <div>
-              <h3 style="margin-bottom: 0.35rem;">Fridays on the Green</h3>
-              <div class="show-location">Centennial Green outside Village Hall, 50 S. Emerson Street, Mount Prospect, Illinois</div>
-              <div class="show-time">6-8 PM</div>
-            </div>
-            <div><strong>June 26, 2026</strong></div>
-          </div>
-
-          <div class="show-item">
-            <div>
+              <span class="show-status">Upcoming</span>
               <h3 style="margin-bottom: 0.35rem;">Buffalo Grove Days</h3>
               <div class="show-location">Mike Rylko Community Park, 951 McHenry Road, Buffalo Grove, Illinois</div>
               <div class="show-time">12-3 PM</div>
             </div>
             <div><strong>September 7, 2026</strong></div>
+          </div>
+
+          <div class="show-item">
+            <div>
+              <span class="show-status">Recent</span>
+              <h3 style="margin-bottom: 0.35rem;">Fridays on the Green</h3>
+              <div class="show-location">Centennial Green outside Village Hall, 50 S. Emerson Street, Mount Prospect, Illinois</div>
+              <div class="show-time">June 26, 2026 - 6-8 PM</div>
+            </div>
+            <div><strong>Mount Prospect</strong></div>
           </div>
 
           <div class="show-item">
