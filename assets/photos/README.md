@@ -9,6 +9,7 @@ Photos from Turning Down Today's set at Centennial Green outside Mount Prospect 
 - `mount-prospect-crowd-wide.jpg` - Wide crowd and park view showing the community event setting.
 - `mount-prospect-live-closeup.jpg` - Live guitar performance detail.
 - `mount-prospect-guitar.jpg` - Guitar performance portrait.
+- `mount-prospect-richie-guitar.jpg` - Richie on guitar.
 - `mount-prospect-jonny-vocal.jpg` - Jonny at the microphone.
 - `mount-prospect-rusty-bass.jpg` - Rusty on bass with stage context.
 - `mount-prospect-drums.jpg` - Ty on drums.
